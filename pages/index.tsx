@@ -132,6 +132,7 @@ const Home: NextPage = () => {
       description.handleReset();
       setFile(null);
     } catch (e) {
+      setModalOpen(false);
       setLoading(false);
       addToast("Something went wrong!", { appearance: "error" });
     }
