@@ -8,6 +8,22 @@ html{
 }
 
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #757575;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #ebf7fd;
+}
+
+
 *,
 *::after,
 *::before {
@@ -72,6 +88,12 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width:900px) {
+          flex-direction: column;
+          gap: 2rem;
+          justify-content: center;
+        }
         .left {
             display: flex;
             align-items: center;
@@ -119,3 +141,227 @@ body {
     }
 }
 
+
+.modal{
+  min-height: 70%;
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  padding: 2.5rem 2rem;
+  background-color: #2E2E2E;
+  color: #fff;
+  overflow: auto;
+  position: relative;
+  border-radius: 5px;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2229;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.1rem;
+  a {
+    transition: .1s;
+    color: #6C63FF !important;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  span {
+    color: #F33535;
+    opacity: .7;
+  }
+}
+
+.btn {
+  color: #F33535;
+  opacity: .7;
+  transition: .1s all;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: .9rem;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.modal {
+
+  button {
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    padding: .5rem 1.25rem;
+    border-radius: 2px;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    input, textarea {
+      border-bottom: 1px solid #fff;
+      background-color: transparent;
+      color: #fffd;
+      font-size: 1.25rem;
+      padding: .25rem .25rem .25rem 0rem;
+    }
+    textarea {
+      height: 10rem;
+    }
+
+    label {
+      font-size: 1rem;
+      opacity: .7;
+    }
+  }
+}
+
+.modal { 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    align-self: stretch;
+    gap: 3rem;
+  }
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+  }
+  .right {
+    flex: 2;
+  }
+  .dropzone {
+    border: 1px dotted #fff;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    border-radius: 5px;
+    min-height: 18rem;
+
+    &--file{
+      flex-direction: column;
+    }
+  }
+  p {
+    text-align: center;
+    line-height: 2;
+    font-size: 1.1rem;
+    cursor: pointer;
+    span {
+      font-size: .835rem;
+    }
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+
+.modal-loading {
+  overflow: hidden;
+}
+
+.loading-visible {
+  display: block;
+}
+
+.disc-label {
+  span {
+    font-size: .85rem;
+    opacity: .75;
+    margin-left: 1rem;
+  }
+}
+
+main {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: auto;
+  gap: 2rem;
+}
+
+.script {
+  background-color: #333;
+  padding: .9rem;
+  width: 25rem;
+  height: 10rem;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+  p {
+    width: 100%;
+  }
+  border-left: 5px solid $primary;
+  position: relative;
+
+  .download {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: $primary;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: 5px;
+  }
+
+  h3 {
+    font-size: 1rem;
+    opacity: .75;
+  }
+
+  p {
+    margin-top: .8rem;
+  }
+}
+
+.mobile {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width:440px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+  }
+}
+
+.repo-link {
+  position: absolute;
+  bottom: 0;
+  right: 3rem;
+  background-color: #fff;
+  padding: .5rem;
+  border-radius: 5px;
+}

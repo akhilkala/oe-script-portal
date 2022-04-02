@@ -6,6 +6,7 @@ export interface InputState {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
   handleReset: () => void;
+  set: (value: string) => void;
 }
 
 const useInputState = (init?: string): InputState => {
@@ -23,7 +24,9 @@ const useInputState = (init?: string): InputState => {
     setValue(initialState);
   };
 
-  return { value, handleChange, handleReset };
+  const set = (value: string) => setValue(value);
+
+  return { value, handleChange, handleReset, set };
 };
 
 export default useInputState;
